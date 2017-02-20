@@ -27,7 +27,9 @@
   showstringspaces=false,
   columns=flexible,
   basicstyle={\tiny\ttfamily},
-  numbers=none,
+  numbers=left,
+  firstnumber=1,
+  numberfirstline=true,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
@@ -35,7 +37,7 @@
   breaklines=true,
   breakatwhitespace=true,
   tabsize=4,
-  xleftmargin=2em
+  xleftmargin=4em
 }
 
 \makeatletter
@@ -113,12 +115,12 @@
     \item Programming Design Online Grading System
     \item 由資管系 B02、B03、B04 同學齊心協力開發。
     \item 可以用 @ntu.edu.tw 信箱申請帳號。
-    \item 系統應該是 24 小時活著，發現系統不小心死掉請戳戳四位獸醫。
+    \item 系統應該是 24 小時活著，發現系統不小心死掉請戳戳四位助教。
     \item 作業、考試皆在系統上，系統備有自動評分功能。
-    \item 請不要用任何方式攻擊系統（包含物理攻擊），不然這門課你可能要修兩次以上。
+    \item 請不要用任何方式攻擊系統（包含物理攻擊），但是歡迎回報漏洞。
   \end{itemize}
   \begin{center}
-    \includegraphics[width=5em]{pdogs.png}
+    \includegraphics[width=5em]{image/pdogs.png}
   \end{center}
 \end{frame}
 
@@ -132,20 +134,20 @@
     \item 常見的 IDE：Dev-C++, Code::Blocks, Xcode, Eclipse ...等。
   \end{itemize}
   \begin{center}
-    \includegraphics[height=2.5em]{dev.png}
+    \includegraphics[height=2.5em]{image/dev.png}
     \hspace{1em}
-    \includegraphics[height=2.5em]{cb.png}
+    \includegraphics[height=2.5em]{image/cb.png}
     \hspace{1em}
-    \includegraphics[height=2.5em]{xcode.png}
+    \includegraphics[height=2.5em]{image/xcode.png}
     \hspace{1em}
-    \includegraphics[height=2.5em]{eclipse.png}
+    \includegraphics[height=2.5em]{image/eclipse.png}
   \end{center}
 \end{frame}
 
 \begin{frame}{Dev-C++}
   \vspace{0.5em}
   \hspace{2em}
-  \includegraphics[height=2.5em]{dev.png}
+  \includegraphics[height=2.5em]{image/dev.png}
   \vspace{0.5em}
   \begin{itemize}
     \item 只有 Windows 有，幫 QQ。（Mac 使用者請用 Xcode）
@@ -160,7 +162,7 @@
 \begin{frame}{Xcode}
   \vspace{0.5em}
   \hspace{2em}
-  \includegraphics[height=2.5em]{xcode.png}
+  \includegraphics[height=2.5em]{image/xcode.png}
   \vspace{0.5em}
   \begin{itemize}
     \item 只有 Mac 有，是 Mac 使用者主要的開發工具。
@@ -174,21 +176,23 @@
   \begin{itemize}
     \item 只有文字編輯功能，可能包含程式碼高亮功能。
     \item 因為沒有包含編譯器，編譯器要自己另外裝。
-    \item 常見的文字編輯器有：Vim, Sublime Text, Atom
+    \item 常見的文字編輯器有：Vim, Sublime Text, Atom, Visual Studio Code
   \end{itemize}
   \begin{center}
-    \includegraphics[height=2.5em]{vim.png}
+    \includegraphics[height=2.5em]{image/vim.png}
     \hspace{1em}
-    \includegraphics[height=2.5em]{st.png}
+    \includegraphics[height=2.5em]{image/st.png}
     \hspace{1em}
-    \includegraphics[height=2.5em]{atom.png}
+    \includegraphics[height=2.5em]{image/atom.png}
+    \hspace{1em}
+    \includegraphics[height=2.5em]{image/vscode.png}
   \end{center}
 \end{frame}
 
 \begin{frame}{Vim}
   \vspace{0.5em}
   \hspace{2em}
-  \includegraphics[height=2.5em]{vim.png}
+  \includegraphics[height=2.5em]{image/vim.png}
   \vspace{0.5em}
   \begin{itemize}
     \item 功能很陽春的純文字編輯器。
@@ -201,7 +205,7 @@
 \begin{frame}{Sublime Text}
   \vspace{0.5em}
   \hspace{2em}
-  \includegraphics[height=2.5em]{st.png}
+  \includegraphics[height=2.5em]{image/st.png}
   \vspace{0.5em}
   \begin{itemize}
     \item UI 很棒的文字編輯器。
@@ -259,11 +263,16 @@
 \end{frame}
 
 \begin{frame}{Q\_\_\_Q}
-\lstinputlisting[breaklines]{bad.cpp}
+  \begin{minipage}[t]{.40\textwidth}
+    \lstinputlisting[breaklines]{code/bad1.cpp}
+  \end{minipage}
+  \begin{minipage}[t]{.40\textwidth}
+    \lstinputlisting[breaklines]{code/bad2.cpp}
+  \end{minipage}
 \end{frame}
 
 \begin{frame}{\textasciicircum\_\_\_\textasciicircum}
-\lstinputlisting[breaklines]{good.cpp}
+  \lstinputlisting[breaklines]{code/good.cpp}
 \end{frame}
 
 % Section: Practice
