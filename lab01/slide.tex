@@ -44,7 +44,7 @@
     \item Introduction to PDOGS
     \item IDE
     \item Text Editor
-    \item Installing g++
+    \item Installing Compiler
     \item Coding Style
     \item Practice
   \end{itemize}
@@ -137,11 +137,80 @@
 % Section: Text Editor
 \section{Text Editor}
 \begin{frame}{Text Editor}
+  \begin{itemize}
+    \item 只有文字編輯功能，可能包含程式碼高亮功能。
+    \item 因為沒有包含編譯器，編譯器要自己另外裝。
+    \item 常見的文字編輯器有：Vim, Sublime Text, Atom
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=2.5em]{vim.png}
+    \hspace{1em}
+    \includegraphics[height=2.5em]{st.png}
+    \hspace{1em}
+    \includegraphics[height=2.5em]{atom.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Vim}
+  \vspace{0.5em}
+  \hspace{2em}
+  \includegraphics[height=2.5em]{vim.png}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item 功能很陽春的純文字編輯器。
+    \item 擴充功能的自由度很高，可以自己寫功能進去。
+    \item 在工作站上很常用。
+    \item 需要記一堆快捷鍵。
+  \end{itemize} 
+\end{frame}
+
+\begin{frame}{Sublime Text}
+  \vspace{0.5em}
+  \hspace{2em}
+  \includegraphics[height=2.5em]{st.png}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item UI 很棒的文字編輯器。
+    \item 可以自己裝很多插件。
+    \item Link: \href{https://www.sublimetext.com/}{\underline{https://www.sublimetext.com/}}
+  \end{itemize}
 \end{frame}
 
 % Section: Installing g++
-\section{Installing g++}
-\begin{frame}{Installing g++}
+\section{Installing Compiler}
+\begin{frame}{Installing Compiler}
+  \begin{itemize}
+    \item 常用的編譯器有 g++、clang 兩種。
+    \item 一般 Windows、Linux 會直接裝 g++。
+    \item Mac 使用者裝 clang 比較方便。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{For Windows User}
+  \begin{itemize}
+    \item 安裝 MinGW 非常方便！
+    \item Link: \href{https://sourceforge.net/projects/mingw/files/}{\underline{https://sourceforge.net/projects/mingw/files/}}
+    \item 中間的 Looking for the latest version? 大力的給它戳下去。
+    \item 安裝完成後，用 MinGW Installation Manager 把 mingw32-gcc-g++ 這項安裝起來。
+    \item 將 MinGW 的安裝路徑加進環境變數 PATH 裡面。
+    \item 如果對你來說太過困難，還是用 Dev-C++ 吧！
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{For Ubuntu User}
+  \begin{itemize}
+    \item 打開你的 Terminal。
+    \item sudo apt-get install g++
+    \item 沒了。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{For Mac User}
+  \begin{itemize}
+    \item 安裝 homebrew。
+    \item 利用 homebrew 指令將 clang 裝起來（也可以用 homebrew 裝 g++）。
+    \item 更多資訊可以 Google 一下，有點複雜，Lab 可以來問助教。
+  \end{itemize}
 \end{frame}
 
 % Section: Coding Style
