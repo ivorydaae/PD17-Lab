@@ -15,6 +15,29 @@
 \usepackage{graphicx}
 \graphicspath{{/}}
 
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\tiny\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  xleftmargin=2em
+}
+
 \makeatletter
 \setbeamertemplate{footline}{%
     \leavevmode%
@@ -134,6 +157,17 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Xcode}
+  \vspace{0.5em}
+  \hspace{2em}
+  \includegraphics[height=2.5em]{xcode.png}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item 只有 Mac 有，是 Mac 使用者主要的開發工具。
+    \item 檔案很大，可能要下載很久。
+  \end{itemize}
+\end{frame}
+
 % Section: Text Editor
 \section{Text Editor}
 \begin{frame}{Text Editor}
@@ -209,6 +243,7 @@
   \begin{itemize}
     \item 安裝 homebrew。
     \item 利用 homebrew 指令將 clang 裝起來（也可以用 homebrew 裝 g++）。
+    \item Link: \href{https://brew.sh/}{\underline{https://brew.sh/}}
     \item 更多資訊可以 Google 一下，有點複雜，Lab 可以來問助教。
   \end{itemize}
 \end{frame}
@@ -216,6 +251,19 @@
 % Section: Coding Style
 \section{Coding Style}
 \begin{frame}{Coding Style}
+  \begin{itemize}
+    \item 好的 coding style 很重要，因為會有其他人需要看你的程式碼。
+    \item 未來的你也有可能看不懂現在寫的程式碼。
+    \item Coding Style 沒有固定的標準，但是簡潔、整齊、有條理是必備要素。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Q\_\_\_Q}
+\lstinputlisting[breaklines]{bad.cpp}
+\end{frame}
+
+\begin{frame}{\textasciicircum\_\_\_\textasciicircum}
+\lstinputlisting[breaklines]{good.cpp}
 \end{frame}
 
 % Section: Practice
