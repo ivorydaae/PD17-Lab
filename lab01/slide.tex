@@ -77,6 +77,7 @@
 
 % Section: TA & Lab
 \section{TA \& Lab}
+\subsection{TA}
 \begin{frame}{TA}
   \begin{itemize}
     \setlength\itemsep{1em}
@@ -95,6 +96,7 @@
   \end{itemize}
 \end{frame}
 
+\subsection{Lab}
 \begin{frame}{Lab}
   \begin{itemize}
     \item 地點：管理學院一號館\ 三樓大電腦教室
@@ -144,6 +146,7 @@
   \end{center}
 \end{frame}
 
+\subsection{Dev-C++}
 \begin{frame}{Dev-C++}
   \vspace{0.5em}
   \hspace{2em}
@@ -159,6 +162,7 @@
   \end{itemize}
 \end{frame}
 
+\subsection{Xcode}
 \begin{frame}{Xcode}
   \vspace{0.5em}
   \hspace{2em}
@@ -167,6 +171,7 @@
   \begin{itemize}
     \item 只有 Mac 有，是 Mac 使用者主要的開發工具。
     \item 檔案很大，可能要下載很久。
+    \item 新增 project 時，選擇 OS X $\to$ Application $\to$ Command Line Tool $\to$ C++。
   \end{itemize}
 \end{frame}
 
@@ -189,6 +194,7 @@
   \end{center}
 \end{frame}
 
+\subsection{Vim}
 \begin{frame}{Vim}
   \vspace{0.5em}
   \hspace{2em}
@@ -202,6 +208,7 @@
   \end{itemize} 
 \end{frame}
 
+\subsection{Sublime Text}
 \begin{frame}{Sublime Text}
   \vspace{0.5em}
   \hspace{2em}
@@ -224,6 +231,7 @@
   \end{itemize}
 \end{frame}
 
+\subsection{Windows}
 \begin{frame}{For Windows User}
   \begin{itemize}
     \item 安裝 MinGW 非常方便！
@@ -235,6 +243,7 @@
   \end{itemize}
 \end{frame}
 
+\subsection{Ubuntu}
 \begin{frame}{For Ubuntu User}
   \begin{itemize}
     \item 打開你的 Terminal。
@@ -243,6 +252,7 @@
   \end{itemize}
 \end{frame}
 
+\subsection{Mac}
 \begin{frame}{For Mac User}
   \begin{itemize}
     \item 安裝 homebrew。
@@ -278,6 +288,72 @@
 % Section: Practice
 \section{Practice}
 \begin{frame}{Practice}
+  \begin{itemize}
+    \item 在未來的助教課時間，會有有趣的練習題。
+    \item 除了上課範圍內的題目以外，助教會準備一些需要思考的題目。
+    \item 也有可能會出現一些要求程式執行效率的問題。
+    \item 較難的題目（會打上星號*）會放上 PDOGS 讓大家練習。
+  \end{itemize}
+\end{frame}
+
+\subsection{A}
+\begin{frame}{Practice A}
+  輸入三個非負整數 $X$、$Y$、$Z$。
+  \begin{enumerate}
+    \item
+    如果 $X + Y = Z$ 則輸出 ``A''
+    \item
+    如果 $X + Z = Y$ 則輸出 ``B''
+    \item
+    如果 $Y + Z = X$ 則輸出 ``C''
+    \item
+    如果以上三點皆不符合，請輸出 ``No''
+  \end{enumerate}
+  \vspace{1em}
+  例如：\\
+  \begin{itemize}
+    \item 輸入 0 0 0，則程式必須輸出 ABC
+    \item 輸入 1 2 3，則程式必須輸出 A
+    \item 輸入 3 7 1，則程式必須輸出 No
+  \end{itemize}
+\end{frame}
+
+\subsection{B}
+\begin{frame}{Practice B}
+  持續輸入數字，每次輸入兩個數字 $N$、$M$，直到兩個數字一樣為止。\\
+  當兩個數字一樣的時候，請輸出 ``Finish at $N$''。\\
+  \vspace{1em}
+  例如：\\
+  持續輸入 1 2、3 4、5 6、7 7\\
+  程式必須輸出 Finish at 7
+\end{frame}
+
+\subsection{C}
+\begin{frame}{*Practice C}
+  輸入兩個數字 $N$、$M$，請輸出兩個數字的最大公因數。\\
+  \vspace{1em}
+  $1\le N, M\le 10^{9}$\\
+  \vspace{1em}
+  例如：
+  \begin{itemize}
+    \item 輸入 1 2，程式必須輸出 1
+    \item 輸入 12 18，程式必須輸出 6
+    \item 輸入 957 1131，程式必須輸出 87
+  \end{itemize}
+\end{frame}
+
+\subsection{D}
+\begin{frame}{*Practice D - Work at Photoshop}
+  你是 Photoshop 的工程師，有一天你需要實作圖片編輯的「裁切」功能。\\
+  在畫面中有一張被擺在 $(x_{1},y_{1})$、$(x_{2},y_{2})$ 的矩形圖片，並且該圖片垂直、平行於 $X$、$Y$ 軸。\\
+  現在使用者用裁切功能框出了 $(x_{3},y_{3})$、$(x_{4},y_{4})$ 這個矩形，想要請你求出被裁切部分的矩形座標。\\
+  請依序輸出左上角、右下角座標，如果沒有裁切到任何一個部分，或是裁切部分面積為 $0$，請輸出 ``No''。\\
+  \vspace{1em}
+  輸入限制：\\
+  $-10^{9}\le x_{i}, y_{i} \le 10^{9}$
+\end{frame}
+
+\begin{frame}{*Practice D - Work at Photoshop}
 \end{frame}
 
 \end{document}
