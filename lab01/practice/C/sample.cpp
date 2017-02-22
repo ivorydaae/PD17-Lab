@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int main() {
-    int m, n, temp = 0;
+    int m = 0, n = 0, temp = 0;
     cin >> m >> n ;
     if(n < m) {
         // swap n & m
