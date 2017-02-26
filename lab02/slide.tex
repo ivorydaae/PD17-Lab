@@ -1,0 +1,191 @@
+\documentclass[t]{beamer}
+
+\usetheme{CambridgeUS}
+
+\title{IM1003: Programming Design, Spring 2017  \linebreak Lab 02}
+\author[bigelephant29]{Jhih-Bang Hsieh\linebreak \small{bigelephant29}}
+\institute{\textbf{National Taiwan University}}
+\date{}
+
+\usefonttheme{serif}
+\usepackage{xeCJK} 
+\usepackage{fontspec}
+\setCJKmainfont{DFPHeiMedium-B5}
+
+\usepackage{graphicx}
+\graphicspath{{/}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=left,
+  firstnumber=1,
+  numberfirstline=true,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  xleftmargin=4em
+}
+
+\makeatletter
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+\makeatother
+
+\begin{document}
+
+% First Page
+\begin{frame}
+  \maketitle
+\end{frame}
+
+% Outline Page
+\begin{frame}{Outline}
+  \begin{itemize}
+    \item if-else
+    \item Logical Operators
+    \item switch-case
+    \item while, do-while
+    \item for
+    \item Nested Structure
+    \item Practice
+  \end{itemize}
+\end{frame}
+
+% Section: if-else 
+\section{if-else}
+\begin{frame}{if-else}
+  \begin{itemize}
+    \item 三個組成元件：if、else if、else
+    \item if 為一切的開頭
+    \item else if 只能接在 if 或 else if 後面
+    \item else 只能接在 if 或 else if 後面
+    \item 一旦寫了 else，後面就不能再接任何條件
+  \end{itemize}
+  \begin{itemize}
+    \item 如果今天是晴天，帥哥哥會想出去運動。(if)
+    \item 否則如果今天是陰天，帥哥哥會想出去逛街。(else if)
+    \item 否則的話，帥哥哥會想宅在家裡打 LOL。(else)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{if-else}
+  \begin{itemize}
+    \item 你不會劈頭就說「否則」，同理 else if、else 不會當作條件式的開頭。
+    \item 你可以一直有各種特例，所以有很多「否則如果（else if）」是很合理的。
+    \item 最後一個否則，如果沒有帶有條件，則囊括所有其他例外。
+    \item 囊括所有例外的否則（else）最多只有一個。
+  \end{itemize}
+\end{frame}
+
+\section{Logical Operators}
+\begin{frame}{Logical Operators}
+  \begin{itemize}
+    \item Logical and: \&\&
+    \item Logical or: ||
+    \item Logical not: !
+    \item Unary Operator（單元運算子）：!
+    \item Binary Operator（二元運算子）：||、\&\&
+    \item 不確定運算優先順序的話，記得加個括號！
+  \end{itemize}
+\end{frame}
+
+\section{switch-case}
+\begin{frame}{switch-case}
+  \lstinputlisting[breaklines]{code/switch.cpp}
+  \begin{itemize}
+    \item case 跟 case 之間記得要 break。
+    \item 多條件可以省略 break，如範例的 value\_1、value\_2。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{switch-case}
+  \lstinputlisting[breaklines]{code/switch_ce.cpp}
+  \begin{itemize}
+    \item error: redefinition of 'tmp'
+    \item 因為所有 case 目前屬於同一個 block，所以這樣寫是不好的。
+    \item 盡量避免在 switch-case 裡面宣告變數。
+    \item 不得已的時候，請加上大括號！
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{switch-case}
+  \lstinputlisting[breaklines]{code/switch_ok.cpp}
+\end{frame}
+
+\section{while, do-while}
+\begin{frame}{while, do-while}
+  \begin{itemize}
+    \item do-while 非常少用到，但是有些時候它非常好用。
+    \item 無論任何條件下，至少必須執行一次的 while 迴圈。
+    \item 大家可以回想一下 Lab01 Practice B！
+  \end{itemize}
+\end{frame}
+
+\section{for}
+\begin{frame}{for}
+  \begin{itemize}
+    \item 帶有計數器（counter）的迴圈。
+    \item 使用時必須清楚了解 for 的執行順序！
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{for}
+  \lstinputlisting[breaklines]{code/for.cpp}
+  \begin{enumerate}
+    \item 執行 (1) 進行初始化，在這裡可以宣告暫時變數。
+    \item 判斷 (2) 條件是否成立，成立則繼續，否則離開。
+    \item 執行 (4)。
+    \item 執行 (3)。
+    \item 回到第 2 點。
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{for}
+  \lstinputlisting[breaklines]{code/for_1.cpp}
+  \lstinputlisting[breaklines]{code/for_2.cpp}
+\end{frame}
+
+\section{Nested Structure}
+\begin{frame}{Nested Structure}
+  \begin{itemize}
+    \item 剛剛介紹的所有結構，都可以寫成巢狀結構。（好潮ㄛ）
+    \item 巢狀結構賦予程式碼更多彈性，可以組成更強、更簡潔的邏輯架構。
+    \lstinputlisting[breaklines]{code/nest.cpp}
+  \end{itemize}
+\end{frame}
+
+\section{Practice}
+\begin{frame}{Practice}
+  請以本週所學，實作上週的 Practice A、B、C、D。
+\end{frame}
+
+\subsection{E}
+\begin{frame}{Practice E}
+  請用巢狀結構輸出九九乘法表，沒有格式限制。
+\end{frame}
+
+\end{document}
