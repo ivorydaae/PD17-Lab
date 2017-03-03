@@ -65,6 +65,7 @@
 % Outline Page
 \begin{frame}{Outline}
   \begin{itemize}
+    \item HW1 Code Review
     \item if-else
     \item Logical Operators
     \item switch-case
@@ -72,6 +73,120 @@
     \item for
     \item Nested Structure
     \item Practice
+  \end{itemize}
+\end{frame}
+
+% Section: HW1 Code Review
+\section{HW1 Code Review}
+\subsection{Problem 3}
+\begin{frame}{17010103}
+  \begin{itemize}
+    \item 輸入一個整數，取其十位、百位
+    \item 將十位、百位組成新數，求其平方
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{code/3_1.cpp} 
+  submit.cpp:1:21: fatal error: iostream : No such file or directory\\
+  compilation terminated.
+  \vspace{2em}
+  \begin{itemize}
+    \item No such file: 沒有找到該檔案
+    \item iostream 後面多打了一個空格所以找不到
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[linerange={1-1}, numbers=none]{code/3_2.cpp}
+  \begin{itemize}
+    \item $<$math.h$>$ 屬於 C，在 C++ 中要用 $<$cmath$>$
+  \end{itemize}
+  \vspace{1.5em}
+  \lstinputlisting[linerange={2-2}, numbers=none]{code/3_2.cpp}
+  \begin{itemize}
+    \item pow 隱含轉型，會先將傳入值轉成浮點數，並回傳浮點數
+    \item 整體隱含兩次轉型，後面的課程會提到轉型
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{code/3_3.cpp}
+  \begin{itemize}
+    \item 會依序處理每一行
+    \item 以最後一行作為 if 的判斷標準
+    \item 別這樣寫 QQ
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{code/3_4.cpp}
+  \begin{itemize}
+    \item 很多程式設計課程都會教這個函式
+    \item system 其實是很危險的，盡量不要用
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{取一數十位、百位}
+  \begin{itemize}
+    \item 假設該數為 $n$
+    \item 取千位：$n_1 = n \% 10000 / 1000$
+    \item 取百位：$n_2 = n \% 1000 / 100$
+    \item 取十位：$n_3 = n \% 100 / 10$
+    \item 取個位：$n_4 = n \% 10$
+  \end{itemize}
+  \begin{itemize}
+    \item $n_2 * 10 + n_3$
+    \item $n \% 1000 / 10$
+    \item $n / 10 \% 100$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{輸出時高位補零}
+  \begin{itemize}
+    \item 判斷該數有幾位
+    \item $0 \le n \le 9 \rightarrow$ 補 3 個 0
+    \item $10 \le n \le 99 \rightarrow$ 補 2 個 0
+    \item $100 \le n \le 999 \rightarrow$ 補 1 個 0
+    \item $1000 \le n \le 9999 \rightarrow$ 不用補 0
+  \end{itemize}
+  \begin{itemize}
+    \item in C: \lstinputlisting[linerange={1-1}, numbers=none]{code/hw1.cpp}
+    \item in C++: \lstinputlisting[linerange={2-3}, numbers=none]{code/hw1.cpp} 
+  \end{itemize}
+\end{frame}
+
+\subsection{Problem 4}
+\begin{frame}{17010104}
+  \begin{itemize}
+    \item 大致上和第三題一樣
+    \item 有了這週學的 for 迴圈，就輕鬆很多了！
+  \end{itemize}
+\end{frame}
+
+\subsection{Conclusion}
+\begin{frame}{Q \& A}
+  \begin{itemize}
+    \item 我跑出來的結果跟 PDOGS 上的不一樣，發生什麼事了？
+      \begin{itemize}
+        \item PDOGS 有開啟 C++11 標準、O2優化
+        \item -std=c++11 -O2
+        \item 編譯器版本、作業系統也會影響執行結果
+      \end{itemize}
+    \item 如果環境不一樣，我要怎麼讓答案跟 PDOGS 一致？
+      \begin{itemize}
+        \item 基本上邏輯正確、用法正確，答案就會一樣
+        \item 不一樣的地方在於某些預設行為（初始化），以及編譯優化
+        \item 換句話說，大部分不一樣的情形，可能是誤用或觀念錯誤
+        \item 所以要乖乖上正課跟助教課！
+      \end{itemize}
+    \item 我寄信給助教，結果助教回信對我一點幫助都沒有 QQ
+      \begin{itemize}
+        \item 幫QQ
+        \item 只要問到上課、助教課有提過的東西，助教基本上不會幫忙
+        \item 問到新東西、觀念錯誤、系統操作問題，助教會試著回信
+        \item 請先自己 google，用網路上的資源解決問題
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
