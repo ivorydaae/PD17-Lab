@@ -1,0 +1,155 @@
+\documentclass[t]{beamer}
+
+\usetheme{CambridgeUS}
+
+\title{IM1003: Programming Design, Spring 2017  \linebreak Lab 04}
+\author[bigelephant29]{Jhih-Bang Hsieh\linebreak \small{bigelephant29}}
+\institute{\textbf{National Taiwan University}}
+\date{}
+
+\usefonttheme{serif}
+\usepackage{xeCJK} 
+\usepackage{fontspec}
+\setCJKmainfont{DFPHeiMedium-B5}
+
+\usepackage{graphicx}
+\graphicspath{{/}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\linespread{0.6}\scriptsize\ttfamily},
+  numbers=left,
+  firstnumber=1,
+  numberfirstline=true,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  xleftmargin=4em
+}
+
+\makeatletter
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+\makeatother
+
+\begin{document}
+
+% First Page
+\begin{frame}
+  \maketitle
+\end{frame}
+
+% Outline Page
+\begin{frame}{Outline}
+  \begin{itemize}
+    \item HW2 Code Review
+    \item Array
+    \item Function
+    \item Practice
+  \end{itemize}
+\end{frame}
+
+% Section: HW2 Code Review
+\section{HW2 Code Review}
+\begin{frame}{HW2-3}
+  \lstinputlisting{code/2_3_1.cpp}
+\end{frame}
+
+\begin{frame}{HW2-3}
+  \lstinputlisting{code/2_3_2.cpp}
+\end{frame}
+
+\begin{frame}{HW2-3}
+  \lstinputlisting{code/2_3_3.cpp}
+\end{frame}
+
+\begin{frame}{HW2-4}
+  \lstinputlisting{code/2_4_1.cpp}
+\end{frame}
+
+% Section: Array
+\section{Array}
+\begin{frame}{Array}
+  \begin{itemize}
+    \item 陣列分成靜態陣列、動態陣列。
+    \item 前者在編譯時期決定大小，存在 stack 裡面。
+    \item 後者在執行時期決定大小，存在 heap 裡面。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Static \& Dynamic Array}
+  \begin{itemize}
+    \item 靜態陣列速度很快。
+    \item 動態陣列大小彈性，控制記憶體用量較容易。
+    \item 非全域靜態陣列受 stack size 限制。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Declare a static array}
+  \lstinputlisting{code/static_array.cpp}
+  \begin{itemize}
+    \item 這樣宣告了一個名字叫做 my\_array 的靜態陣列，長度為 256。
+    \item index: my\_array[0] - my\_array[255]
+    \item 大小無法改變，宣告時無法用變數指定大小。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Declare a dynamic array}
+  \lstinputlisting{code/dynamic_array.cpp}
+  \begin{itemize}
+    \item 這樣宣告了一個名字叫做 my\_array 的指標。
+    \item 該指標指向一段長度為 256 的動態陣列。
+    \item index: my\_array[0] - my\_array[255]
+    \item 大小無法改變，但是宣告時可以用變數指定大小。
+    \item 陣列使用完畢之後，須自行指定釋放記憶體（delete）。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notice}
+  \lstinputlisting{code/static_wrong_1.cpp}
+  \begin{itemize}
+    \item 兩種寫法都是錯的。
+    \item 靜態陣列須在編譯時期決定大小，所以不能讓使用者輸入時決定（執行時期）。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notice}
+  \lstinputlisting{code/static_wrong_2.cpp}
+  \begin{itemize}
+    \item 非全域的靜態陣列存在 stack 裡面，受到 stack size 限制。
+    \item stack size 通常不大，所以開一個很大的靜態陣列在 function 內是很危險的。
+    \item 將這段程式碼抓到電腦上跑跑看，應該會出問題才對！
+    \item 可以在編譯參數中將 stack 調大避免這個問題。
+    \item 用動態陣列才是最好的方法！
+  \end{itemize}
+\end{frame}
+
+\section{Function}
+\begin{frame}{Function}
+  
+\end{frame}
+
+\end{document}

@@ -1,0 +1,174 @@
+\documentclass[t]{beamer}
+
+\usetheme{CambridgeUS}
+
+\title{IM1003: Programming Design, Spring 2017  \linebreak Lab 03}
+\author[bigelephant29]{Jhih-Bang Hsieh\linebreak \small{bigelephant29}}
+\institute{\textbf{National Taiwan University}}
+\date{}
+
+\usefonttheme{serif}
+\usepackage{xeCJK} 
+\usepackage{fontspec}
+\setCJKmainfont{DFPHeiMedium-B5}
+
+\usepackage{graphicx}
+\graphicspath{{/}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=left,
+  firstnumber=1,
+  numberfirstline=true,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  xleftmargin=4em
+}
+
+\makeatletter
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+\makeatother
+
+\begin{document}
+
+% First Page
+\begin{frame}
+  \maketitle
+\end{frame}
+
+% Outline Page
+\begin{frame}{Outline}
+  \begin{itemize}
+    \item 測資組
+    \item Testing
+    \item Practice
+  \end{itemize}
+\end{frame}
+
+\section{測資組}
+\begin{frame}{測資組}
+  \begin{itemize}
+    \item 從本次作業開始，我們將開始使用測資組進行評分。
+    \item 產出能夠幫所有人檢查錯誤的測資不容易，所以需要海量的測資。
+    \item 為了不要讓分數太難拿，大部分的測資只有一筆。
+    \item 本次作業中，佔分 $75\%$ 的測資為單筆測資，剩下配分分成 $5$ 組，每一組 $25$ 筆測資。
+    \item 不含範例總共有 $15 + 5 \times 25 = 140$ 筆測試資料。
+    \item 希望大家上傳前多多檢查，一不小心大家要等你 $141$ 秒 QQ。
+    \item 希望大家可以提早做作業，死線前被大量超時的上傳卡住，助教不會負責。
+  \end{itemize}
+\end{frame}
+
+% Test
+\section{Testing}
+\begin{frame}{Testing}
+  \begin{itemize}
+    \item 測試（Testing）是軟體工程師必須具備的基本能力之一。
+    \item 我們必須根據程式的目標以及規格書（spec），對程式進行基本的測試。
+    \item 我們可以追蹤程式執行過程中的變數值，以及一些必備的條件。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{微波爐}
+  \begin{itemize}
+    \item 我們都知道微波爐不能用金屬容器微波。
+    \item 用金屬容器的話會爆炸！
+    \item 如果我們可以在開始微波前，對容器類型做測試，則可以避免金屬容器！
+    \item 測試（容器）
+  \end{itemize}
+\end{frame}
+
+\subsection{Assertion}
+\begin{frame}{Assertion}
+  \begin{itemize}
+    \item assert（斷言）是一種程式開發過程中用來驗證程式結果是否如預期的功能。
+    \item 當執行過程中，assert 的值出現 False 時，程式會被強制結束並產生錯誤訊息。
+    \item 在 C++ 中，請引入 <cassert> 標頭檔。
+    \item assert(值);
+  \end{itemize}
+\end{frame}
+
+\subsection{Special Case}
+\begin{frame}{Special Case}
+  \begin{itemize}
+    \item 針對不同的題目，我們可以去思考一些特殊的情況，致使自己的程式出錯
+    \item 當沒有頭緒的時候，可以從輸入的條件開始思考（測試邊界條件）。
+    \item 如果題目說 $1\le n\le 100$，那 $n=1$、$n=100$ 的狀況都要試試看。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: HW 2-3}
+  \begin{itemize}
+    \item 給你一個不超過 $10000$ 的數字，試列出所有因數、所有質因數。
+    \item Case 1: 極大、極小的質數。
+    \item Case 2: $2$、$3$ 的冪次（$2^k$、$3^k$），或其組合。
+    \item Case 3: $2$、$3$ 的冪次減 $1$（$2^k-1$、$3^k-1$），或其組合。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: HW 2-4}
+  \begin{itemize}
+    \item 輸入一個數字，輸出其質因數分解。
+    \item Case 1: 質數。
+    \item Case 2: 質數的冪次（$p^k$）。
+    \item Case 3: 單一質因數一次方的組合。
+    \item Case 4: 單一質因數多次方的組合。
+    \item 還有很多 case，我們也可以把題目倒過來想！
+  \end{itemize}
+\end{frame}
+
+\section{Practice}
+\subsection{F}
+\begin{frame}{*Practice F - Rotation}
+  給你一個長度為 $N$ 的數列。\\
+  我們說對數列進行一次「Rotate」代表將該數列首項移到最後，產生一個長度相同的新數列。\\
+  現在，我們希望你可以幫我們對數列做 Rotate $M$ 次。\\
+  \vspace{2em}
+  舉例來說：\\
+  1 2 3 4 5 Rotate 3 次 會得到 4 5 1 2 3。
+\end{frame}
+
+\begin{frame}{*Practice F - Rotation}
+  邊輸出邊 Rotate 是一個不錯的方法，但我們不希望你這樣做。\\
+  請先把數列 Rotate 好，再一次輸出。\\
+  \vspace{2em}
+  延伸：能不能不要額外開一個新的陣列，用輸入時的陣列就好？
+\end{frame}
+
+\subsection{}
+\begin{frame}{Practice}
+  \begin{enumerate}
+    \item 請用本週教的方法對之前的作業、練習進行測試。
+    \item 之前有錯的程式碼也可以拿來練習測試喔！
+    \item 請設想一些本週作業可能會出現的特殊情況。
+    \item 有任何的想法，歡迎與助教討論。
+  \end{enumerate}
+\end{frame}
+
+% Section: HW2 Code Review
+\end{document}
