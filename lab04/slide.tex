@@ -149,21 +149,42 @@
 
 \section{Function}
 \begin{frame}{Function}
-  
+  Function 就像是一個功能機，可以幫助你達成某些特定的功能。\\
+  \vspace{1em}
+  例如：\\
+  有一個做飲料的 Function Drink，\\
+  傳入紅茶、牛奶，得到奶茶，Drink(black tea, milk)，\\
+  傳入綠茶、牛奶，得到奶綠，Drink(green tea, milk)。\\
+  \vspace{1em}
+  當我們把任務妥善的包裝好之後，Function 就可以簡潔有力的幫我們處理一些繁複的工作。
 \end{frame}
 
 \section{Practice}
 \begin{frame}{*Practice G - 2D Rotation}
   給你一個正方形的二維矩陣，請輸出其順時針旋轉 90 度、180度、270度、360度的結果。\\
   輸入、輸出請見 PDOGS。\\
+  \vspace{1em}
   1 2 3\\
   4 5 6\\
   7 8 9\\
   \vspace{1em}
   旋轉 90 度：\\
+  \vspace{1em}
   7 4 1\\
   8 5 2\\
   9 6 3
+\end{frame}
+
+\begin{frame}{*Practice G - 2D Rotation}
+  思考一下，如果我們將「把一個二維陣列旋轉 90 度」包裝成一個 Function，是不是就容易很多了呢？\\
+  \vspace{2em}
+  延伸：為什麼不直接用迴圈去做重複的工作就好？
+\end{frame}
+
+\begin{frame}{*Practice G - 2D Rotation}
+  Function 比迴圈還具有更大的彈性，除了在任何地方都可以直接呼叫之外，Function 還可以帶有其他參數。\\
+  \vspace{1em}
+  以這題來說，我們可以讓 Function 額外帶一個「度數」的參數，這樣旋轉時就不一定只受限於 90 度了。
 \end{frame}
 
 \end{document}
